@@ -15,10 +15,15 @@ $light-bg: #F9FBFE;
 $section-title: #232340;
 $text-color-dark: #4b4263;
 $back-shadow: 2px 2px 5px $brand;
+$footer: #5132B1;
 // $back-shadow: 0 4px 22px 0 $brand, 0 6px 22px 0 $brand;
 
 body{
     line-height: 1.7;
+}   
+
+a {
+    text-decoration: none;
 }
 
 html{
@@ -38,7 +43,7 @@ li{
     list-style-type: none;
 }
 
-section {
+.section {
     padding: 80px 0;
 }
 
@@ -145,9 +150,6 @@ h1, h2, h3, h4, h5, h6{
     @include section-title;
 }
 
-.gift-card {
-    @include section-title;
-}
 
 /* Grid */
 .two-col-grid{
@@ -173,23 +175,12 @@ h1, h2, h3, h4, h5, h6{
     box-shadow: $back-shadow;
 }
 
-// .box-image {
-//     width: 47%;
-//     height: 400px;
-//     object-fit: cover;
-// }
 
 
 @media(max-width: 576px) {
     .box{
         padding: 10px;
     }
-    
-    // .box-image {
-    //     width: 200px;
-    //     height: 200px;
-    //     object-fit: cover;
-    // }
 }
 
 
@@ -219,6 +210,20 @@ h1, h2, h3, h4, h5, h6{
     
     &:hover i {
         transform: translate(5px, -5px);
+    }
+}
+
+.hover-scale{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    
+    & img {
+        @include transition-ease;
+    }
+
+    &:hover img {
+        transform: scale(1.2);
     }
 }
 
@@ -260,19 +265,45 @@ h1, h2, h3, h4, h5, h6{
     border: 1px solid rgba(137,93,251, 0.3);
 }
 
+/* Phone */
+#phone {
+    background: url(./images/hero-dotted.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
 /* Footer */
 
+footer {
+    background-color: $footer;
+    color: $white;
+}
+
 .footer-top{
-    padding: 3rem 0;
+    padding: 6rem 0rem 0rem 0rem;
 }
 
 .footer-bottom{
-    padding: 1rem 0;
+    padding: 1rem 0rem 6rem 0rem;
 }
 
 .social-links a {
     font-size: 19px;
     margin-right: 4px;
+}
+
+.footer-top{
+    
+    a {
+        color: $white;
+        @include transition-ease;
+
+
+        &:hover{
+            color: $brand-hover;
+        }
+    }
 }
 
 .divider{

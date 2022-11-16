@@ -34,7 +34,7 @@ $('#why-carousel').owlCarousel({
     dots: false,
     nav: false,
     smartSpeed: 1000,
-    autoplay:false,
+    autoplay:true,
     autoplayTimeout:5000,
     autoplayHoverPause:true,
     responsive:{
